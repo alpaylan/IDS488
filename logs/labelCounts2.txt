@@ -1,0 +1,14 @@
+Loading dataset.csv
+Done
+Labels:['BENIGN', 'DDoS', 'PortScan', 'Bot', 'FTP-Patator', 'SSH-Patator', 'DoS slowloris', 'DoS Slowhttptest', 'DoS Hulk', 'DoS GoldenEye']
+BENIGN -> 2272688 (80.3877250582%)
+DoS Hulk -> 230124 (8.13976438529%)
+PortScan -> 158930 (5.62154644346%)
+DDoS -> 128027 (4.52846993341%)
+DoS GoldenEye -> 10293 (0.364075867001%)
+FTP-Patator -> 7938 (0.280776666886%)
+SSH-Patator -> 5897 (0.208584026786%)
+DoS slowloris -> 5796 (0.205011534552%)
+DoS Slowhttptest -> 5499 (0.19450628511%)
+Bot -> 1966 (0.0695397993321%)
+Total:2827158

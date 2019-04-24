@@ -18,7 +18,7 @@ from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier(n_estimators = 200 ,
                             random_state = 42 , 
                             oob_score = True ,
-                            class_weight=None, 
+                            class_weight="balanced", 
                             criterion='gini', 
                             max_depth=None,
                             max_features='auto', 
@@ -30,6 +30,7 @@ rf = RandomForestClassifier(n_estimators = 200 ,
                             min_weight_fraction_leaf=0.0)
 
 rf.fit(features_train, labels_train)
+
 
 rf_predict = rf.predict(features_test)
 

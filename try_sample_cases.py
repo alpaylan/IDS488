@@ -8,7 +8,6 @@ labels = np.array(features["target"])
 features = features.drop("target", axis = 1)
 feature_list = list(features.columns)
 features = np.array(features)
-
 from sklearn.model_selection import train_test_split
 # implementing train-test-split
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.33, random_state=66)

@@ -1,0 +1,19 @@
+Loading dataset.csv
+Done
+Labels:['BENIGN', 'DDoS', 'PortScan', 'Bot', 'Infiltration', 'Web Attack \x96 Brute Force', 'Web Attack \x96 XSS', 'Web Attack \x96 Sql Injection', 'FTP-Patator', 'SSH-Patator', 'DoS slowloris', 'DoS Slowhttptest', 'DoS Hulk', 'DoS GoldenEye', 'Heartbleed']
+BENIGN -> 2272688 (80.3244521336%)
+DoS Hulk -> 230124 (8.13335760245%)
+PortScan -> 158930 (5.617121742%)
+DDoS -> 128027 (4.52490558902%)
+DoS GoldenEye -> 10293 (0.363789304036%)
+FTP-Patator -> 7938 (0.280555668458%)
+SSH-Patator -> 5897 (0.208419850957%)
+DoS slowloris -> 5796 (0.20485017062%)
+DoS Slowhttptest -> 5499 (0.194353189827%)
+Bot -> 1966 (0.0694850647756%)
+Web Attack – Brute Force -> 1507 (0.053262458096%)
+Web Attack – XSS -> 652 (0.0230438770263%)
+Infiltration -> 36 (0.0012723613082%)
+Web Attack – Sql Injection -> 21 (0.000742210763116%)
+Heartbleed -> 11 (0.000388777066394%)
+Total:2829385

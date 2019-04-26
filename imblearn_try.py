@@ -9,7 +9,7 @@ from sklearn.datasets import make_classification
 from collections import Counter
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from imblearn.over_sampling import RandomOverSampler
+from imblearn.over_sampling import RandomOverSampler, SMOTE
 RANDOM_STATE = 42
 
 X, y = make_classification(n_samples=5000, n_features=25,
@@ -35,10 +35,24 @@ rf_oversamp = RandomForestClassifier( n_estimators=100,
                         max_features="log2",
                         random_state=RANDOM_STATE)
 
+rf_SMOTE = RandomForestClassifier( n_estimators=100,
+                        oob_score=True,
+                        max_features="log2",
+                        random_state=RANDOM_STATE)
+
+
 random_over_sampler = RandomOverSampler(random_state = RANDOM_STATE)
 
 X_oversamp , y_oversamp = random_over_sampler.fit_resample(X_imb , y_imb)
 X_oversamp_train, X_oversamp_test, y_oversamp_train, y_oversamp_test = train_test_split(X_oversamp, y_oversamp, test_size=0.33, random_state=66)
+
+SMOTE_sampler = SMOTE(random_state = RANDOM_STATE)
+
+X_SMOTE , y_SMOTE = SMOTE_sampler.fit_resample(X_imb , y_imb)
+X_SMOTE_train, X_SMOTE_test, y_SMOTE_train, y_SMOTE_test = train_test_split(X_SMOTE, y_SMOTE, test_size=0.33, random_state=66)
+
+rf_SMOTE.fit(X_SMOTE_train, y_SMOTE_train)
+rf_SMOTE_predict = rf_SMOTE.predict(X_SMOTE_test)
 
 rf_oversamp.fit(X_oversamp_train, y_oversamp_train)
 rf_oversamp_predict = rf_oversamp.predict(X_oversamp_test)
@@ -59,3 +73,7 @@ print classification_report(y_imb_test, rf_imb_predict)
 print "RF with Oversampled Data and no optimization"
 print rf_oversamp.oob_score_
 print classification_report(y_oversamp_test, rf_oversamp_predict)
+
+print "RF with Oversampled Data(SMOTE) and no optimization"
+print rf_SMOTE.oob_score_
+print classification_report(y_SMOTE_test, rf_SMOTE_predict)

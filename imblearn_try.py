@@ -49,9 +49,9 @@ rf_undersamp    = deepcopy(rf)
 rf_IHT          = deepcopy(rf)
 
 sampler_dict = {
-    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE)
-    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE)
-    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE)
+    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE),
+    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE),
+    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE),
     "IHT_sampler"           :InstanceHardnessThreshold(random_state = RANDOM_STATE)
 }
 random_over_sampler     = RandomOverSampler(random_state = RANDOM_STATE)

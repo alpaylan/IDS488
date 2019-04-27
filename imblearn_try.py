@@ -9,13 +9,8 @@ from sklearn.datasets import make_classification
 from collections import Counter
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from imblearn.over_sampling import RandomOverSampler, SMOTE
+from imblearn.over_sampling import *
 from imblearn.under_sampling import *
-"""
-RandomUnderSampler, InstanceHardnessThreshold,  \
-CondensedNearestNeighbour, EditedNearestNeighbours, RepeatedEditedNearestNeighbours \
-AllKNN, NearMiss, NeighbourhoodCleaningRule, OneSidedSelection, TomekLinks
-"""
 from copy import deepcopy
 
 
@@ -47,6 +42,8 @@ predicts = {
 clfs = {
     "ROS"           :deepcopy(rf),
     "SMOTE"         :deepcopy(rf),
+    "ADASYN"        :deepcopy(rf),
+    #"SMOTENC"       :deepcopy(rf),
     "RUS"           :deepcopy(rf),
     "IHT"           :deepcopy(rf),
     "CNN"           :deepcopy(rf),
@@ -65,6 +62,8 @@ clfs = {
 samplers = {
     "ROS"           :RandomOverSampler(random_state = RANDOM_STATE),
     "SMOTE"         :SMOTE(random_state = RANDOM_STATE),
+    "ADASYN"        :ADASYN(random_state = RANDOM_STATE),
+    #"SMOTENC"       :SMOTENC(random_state = RANDOM_STATE),
     "RUS"           :RandomUnderSampler(random_state = RANDOM_STATE),
     "IHT"           :InstanceHardnessThreshold(random_state = RANDOM_STATE),
     "CNN"           :CondensedNearestNeighbour(random_state = RANDOM_STATE),

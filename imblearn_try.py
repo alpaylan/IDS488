@@ -35,18 +35,37 @@ rf_imb =  imbe.BalancedRandomForestClassifier(  n_estimators = 100,
                                                 max_features = "log2",
                                                 random_state = RANDOM_STATE)
 
-
+clf_dict = {
+    "oversamp"      :deepcopy(rf),
+    "SMOTE"         :deepcopy(rf),
+    "undersamp"     :deepcopy(rf),
+    "IHT"           :deepcopy(rf)
+}
+pre_dict = {
+}
 rf_oversamp     = deepcopy(rf)
 rf_SMOTE        = deepcopy(rf)
 rf_undersamp    = deepcopy(rf)
 rf_IHT          = deepcopy(rf)
 
-
+sampler_dict = {
+    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE)
+    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE)
+    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE)
+    "IHT_sampler"           :InstanceHardnessThreshold(random_state = RANDOM_STATE)
+}
 random_over_sampler     = RandomOverSampler(random_state = RANDOM_STATE)
 SMOTE_sampler           = SMOTE(random_state = RANDOM_STATE)
 random_under_sampler    = RandomUnderSampler(random_state = RANDOM_STATE)
 IHT_sampler             = InstanceHardnessThreshold(random_state = RANDOM_STATE)
 
+
+X_dict = {
+    "samp": X_samp_dict
+}
+y_dict = {
+}
+X_dict["oversamp"] , y_dict["oversamp"] = sampler_dict["random_over_sampler"].fit_resample(X_imb , y_imb)
 
 X_oversamp , y_oversamp = random_over_sampler.fit_resample(X_imb , y_imb)
 X_oversamp_train, X_oversamp_test, y_oversamp_train, y_oversamp_test = train_test_split(X_oversamp, y_oversamp, test_size=0.33, random_state=66)
@@ -72,6 +91,9 @@ rf_SMOTE_predict = rf_SMOTE.predict(X_SMOTE_test)
 
 rf_oversamp.fit(X_oversamp_train, y_oversamp_train)
 rf_oversamp_predict = rf_oversamp.predict(X_oversamp_test)
+
+clf_dict["oversamp"].fit(X_oversamp_train, y_oversamp_train)
+pre_dict["oversamp"] = clf_dict["oversamp"].predict(X_oversamp_test)
 
 rf.fit(X_imb_train, y_imb_train)
 rf_predict =  rf.predict(X_imb_test)
@@ -103,3 +125,7 @@ print classification_report(y_undersamp_test, rf_undersamp_predict)
 print "RF with Undersampled Data(InstanceHardnessThreshold) and no optimization"
 print rf_IHT.oob_score_
 print classification_report(y_IHT_test, rf_IHT_predict)
+
+print "RF with Oversampled Data(Random) and no optimization"
+print clf_dict["oversamp"].oob_score_
+print classification_report(y_oversamp_test, pre_dict["oversamp"])

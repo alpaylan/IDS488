@@ -15,15 +15,29 @@ from copy import deepcopy
 
 
 RANDOM_STATE = 42
-
-
-X, y = make_classification(n_samples=5000, n_features=25,
+X_samp = {}
+X_train = {}
+X_test = {}
+X = {
+    "sample"    : X_samp,
+    "train"     : X_train,
+    "test"      : X_test
+}
+y_samp = {}
+y_train = {}
+y_test = {}
+y = {
+    "sample"    : y_samp,
+    "train"     : y_train,
+    "test"      : y_test
+}
+X["sample"]["NULL"] , y["sample"]["NULL"]= make_classification(n_samples=5000, n_features=25,
                            n_clusters_per_class=1, n_informative=15,
                            random_state=RANDOM_STATE)
 #print format(Counter(y))
 
-X_imb, y_imb = imbd.make_imbalance(X ,y , sampling_strategy = {0 : 100 , 1 : 2501 })
-X_imb_train, X_imb_test, y_imb_train, y_imb_test = train_test_split(X_imb, y_imb, test_size=0.33, random_state=66)
+X["sample"]["imb"] , y["sample"]["imb"] = imbd.make_imbalance(X["sample"]["NULL"], y["sample"]["NULL"] , sampling_strategy = {0 : 100 , 1 : 2501 })
+X["train"]["imb"], X["test"]["imb"], y["train"]["imb"], y["train"]["imb"]= train_test_split(X["sample"]["imb"] , y["sample"]["imb"],test_size = 0.33 , random_state = 66 )
 
 rf = RandomForestClassifier( n_estimators=100,
                         oob_score=True,
@@ -35,122 +49,31 @@ rf_imb =  imbe.BalancedRandomForestClassifier(  n_estimators = 100,
                                                 max_features = "log2",
                                                 random_state = RANDOM_STATE)
 
-clf_dict = {
-    "oversamp"      :deepcopy(rf),
+clfs = {
+    "ROS"           :deepcopy(rf),
     "SMOTE"         :deepcopy(rf),
-    "undersamp"     :deepcopy(rf),
-    "IHT"           :deepcopy(rf)
+    "RUS"           :deepcopy(rf),
+    "IHT"           :deepcopy(rf),
+    "imb"           :imbe.BalancedRandomForestClassifier(   n_estimators = 100,
+                                                            oob_score = True,
+                                                            max_features = "log2",
+                                                            random_state = RANDOM_STATE)
 }
-pre_dict = {
+predicts = {
 }
-rf_oversamp     = deepcopy(rf)
-rf_SMOTE        = deepcopy(rf)
-rf_undersamp    = deepcopy(rf)
-rf_IHT          = deepcopy(rf)
-
-sampler_dict = {
-    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE),
-    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE),
-    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE),
-    "IHT_sampler"           :InstanceHardnessThreshold(random_state = RANDOM_STATE)
-}
-random_over_sampler     = RandomOverSampler(random_state = RANDOM_STATE)
-SMOTE_sampler           = SMOTE(random_state = RANDOM_STATE)
-random_under_sampler    = RandomUnderSampler(random_state = RANDOM_STATE)
-IHT_sampler             = InstanceHardnessThreshold(random_state = RANDOM_STATE)
-
-X_samp_dict = {
-
-}
-X_train_dict = {
-
-}
-X_test_dict = {
-
-}
-X_dict = {
-    "sample"    : X_samp_dict,
-    "train"     : X_train_dict,
-    "test"      : X_test_dict
-}
-y_samp_dict = {
-
-}
-y_train_dict = {
-
-}
-y_test_dict = {
-
-}
-y_dict = {
-    "sample"    : y_samp_dict,
-    "train"     : y_train_dict,
-    "test"      : y_test_dict
+samplers = {
+    "ROS"           :RandomOverSampler(random_state = RANDOM_STATE),
+    "SMOTE"         :SMOTE(random_state = RANDOM_STATE),
+    "RUS"           :RandomUnderSampler(random_state = RANDOM_STATE),
+    "IHT"           :InstanceHardnessThreshold(random_state = RANDOM_STATE)
 }
 
-X_dict["sample"]["random_over_sampler"] , y_dict["sample"]["random_over_sampler"] =sampler_dict["random_over_sampler"].fit_resample(X_imb , y_imb)
-X_dict["train"]["random_over_sampler"], X_dict["test"]["random_over_sampler"],y_dict["train"]["random_over_sampler"], y_dict["test"]["random_over_sampler"]=train_test_split(X_dict["sample"]["random_over_sampler"], y_dict["random_over_sampler"], test_size = 0.33, random_state = 66)
-
-
-X_oversamp , y_oversamp = random_over_sampler.fit_resample(X_imb , y_imb)
-X_oversamp_train, X_oversamp_test, y_oversamp_train, y_oversamp_test = train_test_split(X_oversamp, y_oversamp, test_size=0.33, random_state=66)
-
-X_SMOTE , y_SMOTE = SMOTE_sampler.fit_resample(X_imb , y_imb)
-X_SMOTE_train, X_SMOTE_test, y_SMOTE_train, y_SMOTE_test = train_test_split(X_SMOTE, y_SMOTE, test_size=0.33, random_state=66)
-
-X_undersamp , y_undersamp = random_under_sampler.fit_resample(X_imb , y_imb)
-X_undersamp_train, X_undersamp_test, y_undersamp_train, y_undersamp_test = train_test_split(X_undersamp, y_undersamp, test_size=0.33, random_state=66)
-
-X_IHT , y_IHT = IHT_sampler.fit_resample(X_imb , y_imb)
-X_IHT_train, X_IHT_test, y_IHT_train, y_IHT_test = train_test_split(X_IHT, y_IHT, test_size=0.33, random_state=66)
-
-
-rf_IHT.fit(X_IHT_train, y_IHT_train)
-rf_IHT_predict = rf_IHT.predict(X_IHT_test)
-
-rf_undersamp.fit(X_undersamp_train, y_undersamp_train)
-rf_undersamp_predict = rf_undersamp.predict(X_undersamp_test)
-
-rf_SMOTE.fit(X_SMOTE_train, y_SMOTE_train)
-rf_SMOTE_predict = rf_SMOTE.predict(X_SMOTE_test)
-
-rf_oversamp.fit(X_oversamp_train, y_oversamp_train)
-rf_oversamp_predict = rf_oversamp.predict(X_oversamp_test)
-
-clf_dict["oversamp"].fit(X_oversamp_train, y_oversamp_train)
-pre_dict["oversamp"] = clf_dict["oversamp"].predict(X_oversamp_test)
-
-rf.fit(X_imb_train, y_imb_train)
-rf_predict =  rf.predict(X_imb_test)
-
-rf_imb.fit(X_imb_train , y_imb_train)
-rf_imb_predict = rf_imb.predict(X_imb_test)
-
-
-print "RF with Imbalanced Data and no optimization"
-print rf.oob_score_
-print classification_report(y_imb_test, rf_predict)
-
-print "RF with Imbalanced Data and BalancedRF"
-print rf_imb.oob_score_
-print classification_report(y_imb_test, rf_imb_predict)
-
-print "RF with Oversampled Data(Random) and no optimization"
-print rf_oversamp.oob_score_
-print classification_report(y_oversamp_test, rf_oversamp_predict)
-
-print "RF with Oversampled Data(SMOTE) and no optimization"
-print rf_SMOTE.oob_score_
-print classification_report(y_SMOTE_test, rf_SMOTE_predict)
-
-print "RF with Undersample Data(Random) and no optimization"
-print rf_undersamp.oob_score_
-print classification_report(y_undersamp_test, rf_undersamp_predict)
-
-print "RF with Undersampled Data(InstanceHardnessThreshold) and no optimization"
-print rf_IHT.oob_score_
-print classification_report(y_IHT_test, rf_IHT_predict)
-
-print "RF with Oversampled Data(Random) and no optimization"
-print clf_dict["oversamp"].oob_score_
-print classification_report(y_oversamp_test, pre_dict["oversamp"])
+for clf in samplers:
+    X["sample"][clf], y["sample"][clf] = samplers[clf].fit_resample(X["sample"]["imb"], y["sample"]["imb"])
+    X["train"][clf],X["test"][clf],y["train"][clf],y["test"][clf]\
+            =train_test_split(X["sample"][clf],y["sample"][clf], test_size = 0.33, random_state = 66) 
+    clfs[clf].fit(X["train"][clf], y["train"][clf])
+    predicts[clf] = clfs[clf].predict(X["test"][clf])
+    print "RF with " , clf, " and no optimization"
+    print clfs[clf].oob_score_
+    print classification_report(y["test"][clf], predicts[clf])

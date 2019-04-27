@@ -49,9 +49,9 @@ rf_undersamp    = deepcopy(rf)
 rf_IHT          = deepcopy(rf)
 
 sampler_dict = {
-    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE)
-    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE)
-    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE)
+    "random_over_sampler"   :RandomOverSampler(random_state = RANDOM_STATE),
+    "SMOTE_sampler"         :SMOTE(random_state = RANDOM_STATE),
+    "random_under_sampler"  :RandomUnderSampler(random_state = RANDOM_STATE),
     "IHT_sampler"           :InstanceHardnessThreshold(random_state = RANDOM_STATE)
 }
 random_over_sampler     = RandomOverSampler(random_state = RANDOM_STATE)
@@ -59,13 +59,38 @@ SMOTE_sampler           = SMOTE(random_state = RANDOM_STATE)
 random_under_sampler    = RandomUnderSampler(random_state = RANDOM_STATE)
 IHT_sampler             = InstanceHardnessThreshold(random_state = RANDOM_STATE)
 
+X_samp_dict = {
 
+}
+X_train_dict = {
+
+}
+X_test_dict = {
+
+}
 X_dict = {
-    "samp": X_samp_dict
+    "sample"    : X_samp_dict,
+    "train"     : X_train_dict,
+    "test"      : X_test_dict
+}
+y_samp_dict = {
+
+}
+y_train_dict = {
+
+}
+y_test_dict = {
+
 }
 y_dict = {
+    "sample"    : y_samp_dict,
+    "train"     : y_train_dict,
+    "test"      : y_test_dict
 }
-X_dict["oversamp"] , y_dict["oversamp"] = sampler_dict["random_over_sampler"].fit_resample(X_imb , y_imb)
+
+X_dict["sample"]["random_over_sampler"] , y_dict["sample"]["random_over_sampler"] =sampler_dict["random_over_sampler"].fit_resample(X_imb , y_imb)
+X_dict["train"]["random_over_sampler"], X_dict["test"]["random_over_sampler"],y_dict["train"]["random_over_sampler"], y_dict["test"]["random_over_sampler"]=train_test_split(X_dict["sample"]["random_over_sampler"], y_dict["random_over_sampler"], test_size = 0.33, random_state = 66)
+
 
 X_oversamp , y_oversamp = random_over_sampler.fit_resample(X_imb , y_imb)
 X_oversamp_train, X_oversamp_test, y_oversamp_train, y_oversamp_test = train_test_split(X_oversamp, y_oversamp, test_size=0.33, random_state=66)

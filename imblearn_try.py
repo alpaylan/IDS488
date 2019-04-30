@@ -40,20 +40,11 @@ y = {
 predicts = {
 }
 clfs = {
-    "ROS"           :deepcopy(rf),
-    "SMOTE"         :deepcopy(rf),
-    "ADASYN"        :deepcopy(rf),
-    #"SMOTENC"       :deepcopy(rf),
-    "RUS"           :deepcopy(rf),
-    "IHT"           :deepcopy(rf),
-    "CNN"           :deepcopy(rf),
-    "ENN"           :deepcopy(rf),
-    "RENN"          :deepcopy(rf),
-    "AKNN"          :deepcopy(rf),
-    "NM"            :deepcopy(rf),
-    "NCR"           :deepcopy(rf),
-    "OSS"           :deepcopy(rf),
-    "TL"            :deepcopy(rf),
+    "rrf"           :RandomForestClassifier(    n_estimators=100,
+                                                oob_score=True,
+                                                max_features="log2",
+                                                random_state=RANDOM_STATE),
+
     "imb"           :imbe.BalancedRandomForestClassifier(   n_estimators = 100,
                                                             oob_score = True,
                                                             max_features = "log2",
@@ -75,6 +66,10 @@ samplers = {
     "OSS"           :OneSidedSelection(random_state = RANDOM_STATE),
     "TL"            :TomekLinks(random_state = RANDOM_STATE)
 }
+
+for samp in samplers:
+    clfs[samp] = clfs["rrf"]
+
 X["sample"]["NULL"] , y["sample"]["NULL"]= make_classification(n_samples=5000, n_features=25,
                            n_clusters_per_class=1, n_informative=15,
                            random_state=RANDOM_STATE)

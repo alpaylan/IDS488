@@ -1,0 +1,143 @@
+RF with  SMOTE  and no optimization
+0.9770217845419278
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       833
+           1       0.98      0.98      0.98       818
+
+   micro avg       0.98      0.98      0.98      1651
+   macro avg       0.98      0.98      0.98      1651
+weighted avg       0.98      0.98      0.98      1651
+
+RF with  AKNN  and no optimization
+0.9708576186511241
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95       391
+           1       0.96      0.99      0.98       793
+
+   micro avg       0.97      0.97      0.97      1184
+   macro avg       0.97      0.95      0.96      1184
+weighted avg       0.97      0.97      0.97      1184
+
+RF with  ENN  and no optimization
+0.9700872455338596
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95       391
+           1       0.96      1.00      0.98       796
+
+   micro avg       0.97      0.97      0.97      1187
+   macro avg       0.97      0.95      0.96      1187
+weighted avg       0.97      0.97      0.97      1187
+
+RF with  RENN  and no optimization
+0.9649561952440551
+              precision    recall  f1-score   support
+
+           0       0.98      0.91      0.94       391
+           1       0.96      0.99      0.97       791
+
+   micro avg       0.96      0.96      0.96      1182
+   macro avg       0.97      0.95      0.96      1182
+weighted avg       0.96      0.96      0.96      1182
+
+RF with  CNN  and no optimization
+0.9046673286991063
+              precision    recall  f1-score   support
+
+           0       0.90      0.98      0.94       387
+           1       0.91      0.62      0.74       109
+
+   micro avg       0.90      0.90      0.90       496
+   macro avg       0.90      0.80      0.84       496
+weighted avg       0.90      0.90      0.90       496
+
+RF with  NM  and no optimization
+0.9390547263681592
+              precision    recall  f1-score   support
+
+           0       0.94      0.94      0.94       403
+           1       0.94      0.94      0.94       389
+
+   micro avg       0.94      0.94      0.94       792
+   macro avg       0.94      0.94      0.94       792
+weighted avg       0.94      0.94      0.94       792
+
+RF with  NCR  and no optimization
+0.9668763102725367
+              precision    recall  f1-score   support
+
+           0       0.98      0.91      0.94       393
+           1       0.95      0.99      0.97       782
+
+   micro avg       0.96      0.96      0.96      1175
+   macro avg       0.97      0.95      0.96      1175
+weighted avg       0.96      0.96      0.96      1175
+
+RF with  IHT  and no optimization
+0.9846342962507683
+              precision    recall  f1-score   support
+
+           0       1.00      0.98      0.99       405
+           1       0.98      1.00      0.99       397
+
+   micro avg       0.99      0.99      0.99       802
+   macro avg       0.99      0.99      0.99       802
+weighted avg       0.99      0.99      0.99       802
+
+RF with  TL  and no optimization
+0.9627077421970004
+              precision    recall  f1-score   support
+
+           0       0.99      0.89      0.94       386
+           1       0.95      0.99      0.97       830
+
+   micro avg       0.96      0.96      0.96      1216
+   macro avg       0.97      0.94      0.96      1216
+weighted avg       0.96      0.96      0.96      1216
+
+RF with  ADASYN  and no optimization
+0.979845880260818
+              precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98       824
+           1       0.99      0.97      0.98       838
+
+   micro avg       0.98      0.98      0.98      1662
+   macro avg       0.98      0.98      0.98      1662
+weighted avg       0.98      0.98      0.98      1662
+
+RF with  RUS  and no optimization
+0.9496268656716418
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96       403
+           1       0.95      0.96      0.96       389
+
+   micro avg       0.96      0.96      0.96       792
+   macro avg       0.96      0.96      0.96       792
+weighted avg       0.96      0.96      0.96       792
+
+RF with  ROS  and no optimization
+0.9779170396896448
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       833
+           1       0.98      0.98      0.98       818
+
+   micro avg       0.98      0.98      0.98      1651
+   macro avg       0.98      0.98      0.98      1651
+weighted avg       0.98      0.98      0.98      1651
+
+RF with  OSS  and no optimization
+0.9608482871125612
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95       385
+           1       0.96      1.00      0.98       824
+
+   micro avg       0.97      0.97      0.97      1209
+   macro avg       0.98      0.96      0.96      1209
+weighted avg       0.97      0.97      0.97      1209
+

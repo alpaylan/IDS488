@@ -16,11 +16,6 @@ from copy import deepcopy
 
 RANDOM_STATE = 42
 
-rf = RandomForestClassifier( n_estimators=100,
-                        oob_score=True,
-                        max_features="log2",
-                        random_state=RANDOM_STATE)
-
 X_samp = {}
 X_train = {}
 X_test = {}

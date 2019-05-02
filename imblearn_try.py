@@ -70,7 +70,7 @@ X["sample"]["NULL"] , y["sample"]["NULL"]= make_classification(n_samples=5000, n
                            random_state=RANDOM_STATE)
 #print format(Counter(y))
 
-X["sample"]["imb"] , y["sample"]["imb"] = imbd.make_imbalance(X["sample"]["NULL"], y["sample"]["NULL"] , sampling_strategy = {0 : 100 , 1 : 2501 })
+X["sample"]["imb"] , y["sample"]["imb"] = imbd.make_imbalance(X["sample"]["NULL"], y["sample"]["NULL"] , sampling_strategy = {0 : 2499 , 1 : 2501 })
 X["train"]["imb"], X["test"]["imb"], y["train"]["imb"], y["train"]["imb"]= train_test_split(X["sample"]["imb"] , y["sample"]["imb"],test_size = 0.33 , random_state = 66 )
 
 
@@ -88,3 +88,4 @@ for clf in samplers:
     print "RF with " , clf, " and no optimization"
     print clfs[clf].oob_score_
     print classification_report(y["test"][clf], predicts[clf])
+

@@ -1,0 +1,46 @@
+Fitting RF
+Fitted. Time passed: 27.402078867
+
+Testing BENIGN vs DDoS
+Accuracy = 0.99855
+
+Loading classCompare/DoS Slowhttptest.csv
+Done
+Testing BENIGN vs DoS Slowhttptest
+Accuracy = 0.99788
+
+Loading classCompare/DoS Hulk.csv
+Done
+Testing BENIGN vs DoS Hulk
+Accuracy = 0.99782
+
+Loading classCompare/FTP-Patator.csv
+Done
+Testing BENIGN vs FTP-Patator
+Accuracy = 0.9965
+
+Loading classCompare/PortScan.csv
+Done
+Testing BENIGN vs PortScan
+Accuracy = 0.99864
+
+Loading classCompare/DoS slowloris.csv
+Done
+Testing BENIGN vs DoS slowloris
+Accuracy = 0.9827
+
+Loading classCompare/SSH-Patator.csv
+Done
+Testing BENIGN vs SSH-Patator
+Accuracy = 0.97181
+
+Loading classCompare/Bot.csv
+Done
+Testing BENIGN vs Bot
+Accuracy = 0.80046
+
+Loading classCompare/DoS GoldenEye.csv
+Done
+Testing BENIGN vs DoS GoldenEye
+Accuracy = 0.98966
+

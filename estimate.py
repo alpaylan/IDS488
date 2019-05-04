@@ -1,9 +1,11 @@
 import pandas as pd
-import utilities2 as ut
+import time
+import utilities as ut
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
 datasetName = "mergedDataset.csv"
+testSample = "testSample.csv"
 
 features = ut.loadCSV(datasetName, lm=True)
 features = features.dropna()
@@ -23,25 +25,53 @@ def errorCheck():
                                 maks = col[j]
                 print i + " : " + str(maks)
 
-features_train , features_test , labels_train , labels_test = train_test_split(features,labels, test_size = 0.33,random_state = 42)
+rf = RandomForestClassifier(n_estimators=100)
+print "Fitting RF"
+fitStart = time.time()
+rf.fit(features, labels)
+fitEnd = time.time()
+print "Fitted. Time passed: " + str(fitEnd - fitStart)
 
-rf = RandomForestClassifier(n_estimators=100,oob_score=True,max_features="log2",random_state=42)
+def printImportance():
+        importances = rf.feature_importances_
+        featureNames = list(features)
 
-rf.fit(features_train, labels_train)
-rf_pred = rf.predict(features_test)
+        featureImportance = []
 
-importances = rf.feature_importances_
-featureNames = list(features)
+        for i in range(0, len(importances)):
+                featureImportance.append((featureNames[i], importances[i]))
 
-featureImportance = []
+        featureImportance.sort(key = lambda i : i[1], reverse = True)
+        for i in featureImportance:
+                print i[0] + ": " + str(100 * i[1])
 
-for i in range(0, len(importances)):
-        featureImportance.append((featureNames[i], importances[i]))
+def firstTest():
+        testFeatures = ut.loadCSV(testSample, lm=True)
+        testLabels = testFeatures["Label"]
+        testFeatures = testFeatures.drop("Label", axis = 1)
 
-featureImportance.sort(key = lambda i : i[1], reverse = True)
-for i in featureImportance:
-        print i[0] + ": " + str(100 * i[1])
+        predictions = rf.predict(testFeatures)
 
+        print "Accuracy = " + str(accuracy_score(testLabels, predictions))
 
-print classification_report(labels_test, rf_pred)
-print "OOB_Score :" , rf.oob_score_
+def compareClasses():
+        global labels
+        global rf
+        labelTypes = ut.labelTypes(labels)
+        benignFeatures = ut.loadCSV("classCompare/BENIGN.csv", True)
+        benignLabels = benignFeatures["Label"]
+        benignFeatures = benignFeatures.drop("Label", axis=1)
+        for i in labelTypes:
+                if i == "BENIGN":
+                        continue
+                attackFeatures = ut.loadCSV("classCompare/" + i + ".csv", True)
+                attackLabels = attackFeatures["Label"]
+                attackFeatures = attackFeatures.drop("Label", axis=1)
+                mergedFeatures = benignFeatures.append(attackFeatures)
+                mergedLabels = benignLabels.append(attackLabels)
+                print "Testing BENIGN vs " + i
+                predictions = rf.predict(mergedFeatures)
+                print "Accuracy = " + str(accuracy_score(mergedLabels, predictions))
+                print ""
+
+compareClasses()

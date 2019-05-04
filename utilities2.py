@@ -112,6 +112,7 @@ def clearInf(base = "Flow_Bytes/s"):
         n0 = features.shape[0]
         print "Size before cleaning:" + str(n0)
         features = features.drop(indexes, axis = 0)
+        features = features.reset_index(drop = True)
         n1 = features.shape[0]
         print "Size after cleaning:" + str(n1)
 
@@ -147,13 +148,13 @@ def getDivided():
                 ret.append(features.loc[indexes,:])
         return ret
 
-def sample():
+def sample(sampleSize = averageSampleSize):
         divided = getDivided()
         for i in range(0, len(divided)):
-                if divided[i].shape[0] < averageSampleSize:
-                        divided[i] = divided[i].sample(averageSampleSize, replace = True)
+                if divided[i].shape[0] < sampleSize:
+                        divided[i] = divided[i].sample(sampleSize, replace = True)
                 else:
-                        divided[i] = divided[i].sample(averageSampleSize)
+                        divided[i] = divided[i].sample(sampleSize)
         for i in range(0, len(divided)):
                 divided[i] = divided[i].reset_index(drop = True)
         return divided
@@ -163,3 +164,10 @@ def getSampledFeatures():
         merged = merged.sample(frac = 1)
         merged = merged.reset_index(drop = True)
         return merged
+
+def saveSampled(sampleSize = averageSampleSize):
+        divided = sample(sampleSize)
+        for i in divided:
+                label = list(i['Label'])[0]
+                print "Sampled " + label
+                save(label + ".csv", i)

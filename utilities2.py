@@ -171,3 +171,26 @@ def saveSampled(sampleSize = averageSampleSize):
                 label = list(i['Label'])[0]
                 print "Sampled " + label
                 save(label + ".csv", i)
+
+def createBinaryDatasets(sampleSize = averageSampleSize):
+        global features
+        tmp = features
+        features = features.sample(frac = 1)
+        features = features.reset_index(drop = True)
+        features_test = features.loc[0:features.shape[0]/2,:]
+        features_train = features.loc[features.shape[0]/2:,:]
+        features_test = features_test.reset_index(drop = True)
+        features_train = features_train.reset_index(drop = True)
+        features = features_test
+        divided = sample(sampleSize)
+        for i in divided:
+                label = list(i['Label'])[0]
+                print "Sampled " + label
+                save(label + "_test.csv", i)
+        features = features_train
+        divided = sample(sampleSize)
+        for i in divided:
+                label = list(i['Label'])[0]
+                print "Sampled " + label
+                save(label + "_train.csv", i)
+        features = tmp

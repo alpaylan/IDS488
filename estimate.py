@@ -1,8 +1,8 @@
 import pandas as pd
 import time
-import utilities as ut
+import utilities2 as ut
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 
 datasetName = "mergedDataset.csv"
 testSample = "testSample.csv"
@@ -97,7 +97,7 @@ def compareBinary():
                 attackTrain = ut.loadCSV("binaryCompare/" + i + "_train.csv", lm=True)
                 attackLabels = attackTrain["Label"]
                 attackTrain = attackTrain.drop("Label", axis = 1)
-                forest = RandomForestClassifier(n_estimators=100)
+                forest = RandomForestClassifier(n_estimators=10, min_samples_leaf = 100)
                 mergedTrainFeatures = benignTrain.append(attackTrain)
                 mergedTrainLabels = benignTrainLabels.append(attackLabels)
                 print "Fitting RF for BENIGN vs " + i
@@ -122,6 +122,8 @@ def compareBinary():
                 importantPairs.sort(key = lambda i : i[1], reverse = True)
                 for i in importantPairs:
                         print i[0] + ": " + str(100*i[1]) + "%"
+                print "--------------------------------------------------------"
+                print classification_report(predictions,mergedReal)
                 print "--------------------------------------------------------"
 
 compareBinary()

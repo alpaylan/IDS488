@@ -1,0 +1,924 @@
+Loading mergedDataset.csv
+Done
+Loading binaryCompare/BENIGN_train.csv
+Done
+Loading binaryCompare/BENIGN_test.csv
+Done
+
+--------------------------------------------------------
+BENIGN vs DDoS
+--------------------------------------------------------
+Loading binaryCompare/DDoS_train.csv
+Done
+Fitting RF for BENIGN vs DDoS
+Fitted. Time passed: 1.08968400955
+Loading binaryCompare/DDoS_test.csv
+Done
+Accuracy for BENIGN vs DDoS= 0.99906
+
+Variable Importances:
+Avg_Fwd_Segment_Size: 10.679615427469754%
+Total_Fwd_Packets: 9.972873147955532%
+Bwd_Packet_Length_Mean: 6.946385963592615%
+Fwd_Packet_Length_Mean: 5.9307411768436475%
+Fwd_Packet_Length_Max: 5.755101885052831%
+act_data_pkt_fwd: 5.448647113337228%
+Subflow_Fwd_Bytes: 5.092743202105313%
+Fwd_IAT_Total: 4.844059570078136%
+Fwd_IAT_Mean: 4.75421828378065%
+Packet_Length_Variance: 4.523672379634006%
+Subflow_Bwd_Bytes: 4.090160179696054%
+Fwd_IAT_Std: 3.294740017261079%
+Flow_Duration: 3.111243708458475%
+Average_Packet_Size: 2.993306693008831%
+Flow_IAT_Mean: 2.748224778127543%
+Init_Win_bytes_backward: 2.677810558362681%
+Flow_Bytes/s: 2.513473995665657%
+Packet_Length_Std: 2.278679294109528%
+Bwd_Header_Length: 2.2542125612735595%
+Max_Packet_Length: 1.764845286637156%
+Avg_Bwd_Segment_Size: 1.598575801097939%
+Total_Length_of_Fwd_Packets: 1.1962456372843142%
+Fwd_Header_Length.1: 1.1800319925874123%
+Fwd_Packet_Length_Std: 0.9136121857049074%
+Subflow_Bwd_Packets: 0.8962904401258982%
+Packet_Length_Mean: 0.638232836863263%
+Flow_IAT_Std: 0.40108060443568805%
+Fwd_Packet_Length_Min: 0.3921747982474557%
+Init_Win_bytes_forward: 0.28625570065757805%
+Total_Backward_Packets: 0.1467450884472257%
+Total_Length_of_Bwd_Packets: 0.13564932003086513%
+Bwd_IAT_Std: 0.12961080093571586%
+Flow_IAT_Max: 0.08430709644784573%
+min_seg_size_forward: 0.08056451276483913%
+Bwd_Packet_Length_Max: 0.055413408544087474%
+Flow_IAT_Min: 0.05297019412259819%
+Min_Packet_Length: 0.04521761695068118%
+Fwd_Header_Length: 0.0339048516840739%
+Bwd_IAT_Total: 0.03349551287082636%
+Fwd_IAT_Min: 0.008086322359367452%
+Fwd_IAT_Max: 0.006383939681609283%
+Fwd_Packets/s: 0.004401077988009786%
+URG_Flag_Count: 0.002716524199517481%
+Bwd_Packets/s: 0.0010567894511788755%
+Flow_Packets/s: 0.0005664583234223978%
+Bwd_IAT_Max: 0.00037053271975946256%
+Idle_Min: 0.0002844219547778928%
+Active_Min: 0.0002837900841203647%
+Bwd_IAT_Min: 0.0002345799476531077%
+Bwd_IAT_Mean: 0.000196207741183032%
+FIN_Flag_Count: 0.00010529669072901724%
+Subflow_Fwd_Packets: 4.558289383182865e-05%
+ACK_Flag_Count: 4.14036422750437e-05%
+Idle_Mean: 3.4233914703882586e-05%
+Active_Mean: 2.5276228116799396e-05%
+Bwd_Packet_Length_Std: 1.7186809972946283e-05%
+Down/Up_Ratio: 1.380832257450671e-05%
+Active_Max: 1.992141748170725e-06%
+Protocol: 9.5265195783318e-07%
+Bwd_Packet_Length_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Std: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      1.00      1.00     50058
+        DDoS       1.00      1.00      1.00     49942
+
+   micro avg       1.00      1.00      1.00    100000
+   macro avg       1.00      1.00      1.00    100000
+weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS Slowhttptest
+--------------------------------------------------------
+Loading binaryCompare/DoS Slowhttptest_train.csv
+Done
+Fitting RF for BENIGN vs DoS Slowhttptest
+Fitted. Time passed: 0.822933912277
+Loading binaryCompare/DoS Slowhttptest_test.csv
+Done
+Accuracy for BENIGN vs DoS Slowhttptest= 0.99588
+
+Variable Importances:
+Fwd_IAT_Mean: 14.439972968064376%
+Flow_Packets/s: 13.193704185997483%
+Fwd_Packets/s: 11.120083140273254%
+Flow_IAT_Mean: 9.916299336692616%
+Fwd_IAT_Max: 6.7819923346766915%
+min_seg_size_forward: 4.238595114425288%
+Flow_IAT_Min: 4.0582987060556395%
+Fwd_Packet_Length_Mean: 3.9038041604681384%
+Total_Length_of_Bwd_Packets: 3.788673190003545%
+Average_Packet_Size: 3.211764073030701%
+Avg_Fwd_Segment_Size: 2.9985221859123343%
+Bwd_Packet_Length_Max: 1.864450039766763%
+Packet_Length_Variance: 1.6894845719903573%
+Bwd_IAT_Mean: 1.326629159770022%
+Packet_Length_Std: 1.2991981360303957%
+Total_Length_of_Fwd_Packets: 1.229083105522115%
+Fwd_Packet_Length_Min: 0.9906242653682517%
+Down/Up_Ratio: 0.9740025320064556%
+Subflow_Bwd_Bytes: 0.9377933246945342%
+Bwd_Packet_Length_Std: 0.9296740093739032%
+Fwd_Header_Length: 0.8269938859602354%
+Init_Win_bytes_forward: 0.8186464985115393%
+Avg_Bwd_Segment_Size: 0.7941513299003035%
+Bwd_Packet_Length_Min: 0.7264214377057465%
+Fwd_Header_Length.1: 0.7262130508096069%
+Fwd_IAT_Total: 0.6172011465964791%
+Max_Packet_Length: 0.594521460415119%
+Fwd_PSH_Flags: 0.5684095646683776%
+Fwd_Packet_Length_Max: 0.5450495231386467%
+Total_Fwd_Packets: 0.4804318191115155%
+Bwd_IAT_Max: 0.4151693380254503%
+Bwd_IAT_Total: 0.38075432826627137%
+Subflow_Fwd_Bytes: 0.35669045668083077%
+Bwd_IAT_Min: 0.34224801343745737%
+Min_Packet_Length: 0.31168288733133415%
+Fwd_Packet_Length_Std: 0.2934402897073773%
+Bwd_Packet_Length_Mean: 0.266663352445725%
+Init_Win_bytes_backward: 0.22525786108692902%
+Fwd_IAT_Std: 0.21255537246778455%
+Bwd_Header_Length: 0.21026847049723696%
+Flow_IAT_Std: 0.17377947093014512%
+Flow_IAT_Max: 0.17079862845075802%
+Total_Backward_Packets: 0.13450382985401754%
+Subflow_Bwd_Packets: 0.12810799962983424%
+Flow_Duration: 0.12420729248358484%
+Packet_Length_Mean: 0.10726842555771494%
+Bwd_Packets/s: 0.105726228128157%
+act_data_pkt_fwd: 0.10161796413763813%
+PSH_Flag_Count: 0.10131460402039631%
+Flow_Bytes/s: 0.07792043576428322%
+Subflow_Fwd_Packets: 0.07158331399696237%
+Fwd_IAT_Min: 0.05865323393713115%
+Idle_Std: 0.021621012533005055%
+Active_Min: 0.005845785222157971%
+Idle_Max: 0.005818203089031869%
+Active_Mean: 0.002549450015671322%
+Active_Max: 0.0023873531338004287%
+Active_Std: 0.00048577289370482535%
+URG_Flag_Count: 0.0003020245764397246%
+Bwd_IAT_Std: 5.804086877499486e-05%
+ACK_Flag_Count: 2.8188022761205066e-05%
+Idle_Min: 4.115867202807895e-06%
+Protocol: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Idle_Mean: 0.0%
+--------------------------------------------------------
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      0.99      1.00     50118
+DoS Slowhttptest       0.99      1.00      1.00     49882
+
+       micro avg       1.00      1.00      1.00    100000
+       macro avg       1.00      1.00      1.00    100000
+    weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS Hulk
+--------------------------------------------------------
+Loading binaryCompare/DoS Hulk_train.csv
+Done
+Fitting RF for BENIGN vs DoS Hulk
+Fitted. Time passed: 0.933027982712
+Loading binaryCompare/DoS Hulk_test.csv
+Done
+Accuracy for BENIGN vs DoS Hulk= 0.99536
+
+Variable Importances:
+Bwd_Packet_Length_Std: 10.958090245312055%
+Bwd_Packet_Length_Mean: 10.208436292760537%
+Bwd_Packets/s: 10.129568531735641%
+Fwd_IAT_Std: 8.999705616266338%
+Max_Packet_Length: 7.565911656534633%
+Average_Packet_Size: 6.596494842095919%
+Avg_Bwd_Segment_Size: 5.0288104994784435%
+Packet_Length_Std: 3.689418071043429%
+Fwd_Header_Length.1: 3.538030873843413%
+Fwd_Packet_Length_Std: 3.29212210942567%
+Fwd_Header_Length: 2.9495175517748553%
+Flow_Bytes/s: 2.5244909211270783%
+Total_Length_of_Fwd_Packets: 2.4476600424640593%
+Init_Win_bytes_forward: 2.433150876180169%
+Fwd_IAT_Max: 1.9351927235582167%
+Flow_Duration: 1.8309827307761677%
+Subflow_Bwd_Packets: 1.5291267560794422%
+Bwd_Packet_Length_Min: 1.4603002139459054%
+Fwd_IAT_Mean: 1.3567452716992379%
+Fwd_IAT_Total: 1.2184119280605592%
+Fwd_IAT_Min: 1.091883697741714%
+FIN_Flag_Count: 1.0784674847952227%
+Flow_IAT_Mean: 0.7663803482571787%
+Flow_Packets/s: 0.7442700987685259%
+Min_Packet_Length: 0.6842955617022769%
+PSH_Flag_Count: 0.623333570300475%
+Packet_Length_Mean: 0.49483792444573027%
+Packet_Length_Variance: 0.45551754103314673%
+Flow_IAT_Min: 0.4523532954334617%
+min_seg_size_forward: 0.35949481373561776%
+Down/Up_Ratio: 0.35019494166125564%
+Total_Backward_Packets: 0.3193807358477056%
+Bwd_IAT_Max: 0.31016562992696145%
+Fwd_Packet_Length_Min: 0.28594855987715506%
+Avg_Fwd_Segment_Size: 0.24758634832203313%
+Init_Win_bytes_backward: 0.24194784895991972%
+Bwd_Header_Length: 0.2345269691268187%
+Flow_IAT_Std: 0.22540752286528137%
+act_data_pkt_fwd: 0.20849237638625684%
+Fwd_Packet_Length_Max: 0.2021628884943875%
+Flow_IAT_Max: 0.1968524726015446%
+Subflow_Bwd_Bytes: 0.14784467023434325%
+Fwd_Packet_Length_Mean: 0.1154791905998098%
+ACK_Flag_Count: 0.08862103932246504%
+Active_Mean: 0.08807064779341485%
+Subflow_Fwd_Packets: 0.0671761766680293%
+Bwd_Packet_Length_Max: 0.06603878382390797%
+Fwd_Packets/s: 0.06211353896891273%
+Bwd_IAT_Std: 0.042785518134428276%
+Bwd_IAT_Mean: 0.019095815639336294%
+Total_Fwd_Packets: 0.01678577095853736%
+Bwd_IAT_Min: 0.009645264597679061%
+Bwd_IAT_Total: 0.005066857136993323%
+Idle_Min: 0.0023150418060877338%
+Active_Max: 0.0020735224108930713%
+Subflow_Fwd_Bytes: 0.0005860039309513443%
+Idle_Max: 0.0003261178266130521%
+Total_Length_of_Bwd_Packets: 0.00024903508062071246%
+Protocol: 3.836155221036782e-05%
+URG_Flag_Count: 1.947179015607234e-05%
+Idle_Mean: 7.87280174644942e-07%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Std: 0.0%
+Active_Min: 0.0%
+Idle_Std: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       0.99      1.00      1.00     49798
+    DoS Hulk       1.00      0.99      1.00     50202
+
+   micro avg       1.00      1.00      1.00    100000
+   macro avg       1.00      1.00      1.00    100000
+weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs FTP-Patator
+--------------------------------------------------------
+Loading binaryCompare/FTP-Patator_train.csv
+Done
+Fitting RF for BENIGN vs FTP-Patator
+Fitted. Time passed: 0.815447092056
+Loading binaryCompare/FTP-Patator_test.csv
+Done
+Accuracy for BENIGN vs FTP-Patator= 0.9989
+
+Variable Importances:
+Fwd_Packet_Length_Mean: 14.433106862093956%
+Fwd_Packet_Length_Max: 11.32709110747828%
+Avg_Fwd_Segment_Size: 9.354540793671212%
+Subflow_Fwd_Bytes: 9.340907731060396%
+Fwd_Packet_Length_Std: 7.551093319508037%
+SYN_Flag_Count: 5.4472391655032375%
+Avg_Bwd_Segment_Size: 5.03025650175671%
+Packet_Length_Std: 3.3608412419736458%
+Bwd_Packet_Length_Max: 3.191949034350764%
+Subflow_Bwd_Bytes: 2.834931685021013%
+Fwd_Packets/s: 2.7762984088386244%
+Bwd_Packets/s: 2.553927064816989%
+Packet_Length_Variance: 2.523173711558741%
+Bwd_Header_Length: 2.4715902801957172%
+Flow_Bytes/s: 2.4690594342698695%
+Total_Backward_Packets: 2.368580105416821%
+Fwd_IAT_Total: 1.9800654067863057%
+Fwd_IAT_Max: 1.9383527833995335%
+Max_Packet_Length: 1.8751925981724382%
+Min_Packet_Length: 1.6870831528083357%
+Packet_Length_Mean: 1.3604723141751742%
+Bwd_Packet_Length_Mean: 1.2427947042088847%
+Average_Packet_Size: 1.1104665765273973%
+Fwd_PSH_Flags: 1.1086121622866287%
+Fwd_Header_Length.1: 0.1600509231638262%
+Total_Fwd_Packets: 0.09242925151499781%
+Subflow_Fwd_Packets: 0.08597290491098482%
+Init_Win_bytes_backward: 0.07196726007703233%
+Total_Length_of_Fwd_Packets: 0.047709177998586316%
+Fwd_IAT_Min: 0.044516064980674626%
+Flow_IAT_Mean: 0.03147637072971274%
+Bwd_IAT_Std: 0.02005471648597966%
+Flow_Packets/s: 0.01805211828685047%
+Fwd_IAT_Mean: 0.017280751734997036%
+Flow_IAT_Min: 0.012353106648453193%
+Bwd_IAT_Max: 0.012348757651563165%
+Flow_Duration: 0.01229552741988472%
+Flow_IAT_Max: 0.011484000646367672%
+Fwd_Header_Length: 0.008068420246933767%
+PSH_Flag_Count: 0.007975579622294946%
+Init_Win_bytes_forward: 0.0038757636584254374%
+Flow_IAT_Std: 0.003279755202347639%
+min_seg_size_forward: 0.000916980131861075%
+act_data_pkt_fwd: 9.911365287839482e-05%
+Subflow_Bwd_Packets: 6.206703744151164e-05%
+Bwd_IAT_Min: 4.931081628086633e-05%
+Fwd_Packet_Length_Min: 2.9061203760034817e-05%
+Fwd_IAT_Std: 2.6835796771037186e-05%
+Bwd_IAT_Total: 3.450238181870768e-08%
+Protocol: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      1.00      1.00     50098
+ FTP-Patator       1.00      1.00      1.00     49902
+
+   micro avg       1.00      1.00      1.00    100000
+   macro avg       1.00      1.00      1.00    100000
+weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs PortScan
+--------------------------------------------------------
+Loading binaryCompare/PortScan_train.csv
+Done
+Fitting RF for BENIGN vs PortScan
+Fitted. Time passed: 0.623921871185
+Loading binaryCompare/PortScan_test.csv
+Done
+Accuracy for BENIGN vs PortScan= 0.99791
+
+Variable Importances:
+Total_Length_of_Fwd_Packets: 23.335255027576327%
+Avg_Fwd_Segment_Size: 14.523909143088943%
+Packet_Length_Mean: 9.705217434666373%
+Subflow_Fwd_Bytes: 7.733732028371741%
+Flow_Duration: 6.577926915288912%
+PSH_Flag_Count: 6.060265091814167%
+Init_Win_bytes_forward: 5.225385298819997%
+Fwd_IAT_Max: 4.514754951757107%
+Flow_Packets/s: 3.4902998843949367%
+Average_Packet_Size: 2.947467466998125%
+Bwd_Packet_Length_Max: 2.518925718773358%
+Max_Packet_Length: 2.0962895477501955%
+ACK_Flag_Count: 1.9463800601611452%
+Fwd_Packet_Length_Max: 1.5935127268961145%
+Flow_Bytes/s: 1.5187828996927055%
+Init_Win_bytes_backward: 1.406655420707084%
+Fwd_Header_Length.1: 1.2015171576620944%
+Bwd_Header_Length: 1.0819993152044953%
+Bwd_IAT_Mean: 0.6442764046504702%
+Fwd_IAT_Min: 0.548197511859967%
+Packet_Length_Std: 0.2733824651318822%
+Bwd_Packets/s: 0.17238219456330323%
+Fwd_Packet_Length_Mean: 0.16268643810361308%
+Fwd_IAT_Total: 0.11821415240490828%
+Subflow_Bwd_Packets: 0.10783993874944439%
+Total_Length_of_Bwd_Packets: 0.07571817756426143%
+Packet_Length_Variance: 0.06644057943098719%
+Flow_IAT_Std: 0.064957097516184%
+Bwd_IAT_Max: 0.05268876917866128%
+Subflow_Bwd_Bytes: 0.050350313560795716%
+Flow_IAT_Mean: 0.04025865483141845%
+Bwd_Packet_Length_Min: 0.039935191167956643%
+Fwd_IAT_Std: 0.02966562243720015%
+Idle_Min: 0.01793582512681237%
+Fwd_Packets/s: 0.01774315970769544%
+Fwd_Header_Length: 0.015970437898661358%
+Flow_IAT_Max: 0.009116737181742836%
+Flow_IAT_Min: 0.006168262890988825%
+Bwd_Packet_Length_Mean: 0.0017531680898214858%
+Bwd_Packet_Length_Std: 0.001582874430493094%
+Total_Fwd_Packets: 0.000984192144321832%
+Active_Mean: 0.0008713032348042837%
+Down/Up_Ratio: 0.00068965043572764%
+Bwd_IAT_Total: 0.0005880532490947736%
+Subflow_Fwd_Packets: 0.0004082083309071277%
+Active_Min: 0.00037454861544558793%
+Fwd_IAT_Mean: 0.00024821357209559806%
+Avg_Bwd_Segment_Size: 9.216953404988341e-05%
+Bwd_IAT_Min: 9.101879068263593e-05%
+Fwd_Packet_Length_Min: 8.099742980145785e-05%
+Active_Max: 2.3566418016349838e-05%
+Min_Packet_Length: 4.810073496760728e-06%
+min_seg_size_forward: 1.662832272952257e-06%
+Total_Backward_Packets: 1.5392381903804983e-06%
+Protocol: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_IAT_Std: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+act_data_pkt_fwd: 0.0%
+Active_Std: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      1.00      1.00     50135
+    PortScan       1.00      1.00      1.00     49865
+
+   micro avg       1.00      1.00      1.00    100000
+   macro avg       1.00      1.00      1.00    100000
+weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS slowloris
+--------------------------------------------------------
+Loading binaryCompare/DoS slowloris_train.csv
+Done
+Fitting RF for BENIGN vs DoS slowloris
+Fitted. Time passed: 0.699752092361
+Loading binaryCompare/DoS slowloris_test.csv
+Done
+Accuracy for BENIGN vs DoS slowloris= 0.99627
+
+Variable Importances:
+Avg_Bwd_Segment_Size: 11.643685236790349%
+Bwd_Packets/s: 10.451667048299022%
+Bwd_Packet_Length_Max: 7.866722057805793%
+Fwd_IAT_Mean: 7.317670423993697%
+Flow_IAT_Std: 5.21922103629052%
+Subflow_Bwd_Bytes: 5.211953153027367%
+Fwd_IAT_Total: 4.5405051132254615%
+Min_Packet_Length: 4.350032512080457%
+Flow_IAT_Max: 3.343795802852577%
+Flow_IAT_Min: 3.081291530137056%
+Idle_Mean: 2.8691423845144706%
+Total_Length_of_Bwd_Packets: 2.80039642025156%
+Fwd_Packets/s: 2.779602293833341%
+SYN_Flag_Count: 2.369135931736393%
+Fwd_Header_Length: 1.9289856380513555%
+Total_Backward_Packets: 1.9188582302446209%
+Packet_Length_Mean: 1.5949411434333478%
+Fwd_PSH_Flags: 1.5748248215172271%
+Fwd_Packet_Length_Min: 1.4052040644644603%
+Flow_IAT_Mean: 1.263364628454056%
+Flow_Bytes/s: 1.1232275346602993%
+min_seg_size_forward: 1.1187513256211101%
+Fwd_IAT_Min: 1.0738374951793552%
+Flow_Duration: 0.9317846864304505%
+Init_Win_bytes_forward: 0.849551338672003%
+Bwd_IAT_Mean: 0.8181478495688942%
+Bwd_Packet_Length_Mean: 0.8101188625404752%
+Subflow_Fwd_Bytes: 0.7688793686966346%
+Bwd_Header_Length: 0.7662328956923155%
+Fwd_IAT_Max: 0.6647836260209485%
+Init_Win_bytes_backward: 0.6441919719558609%
+Average_Packet_Size: 0.6135360229113047%
+Idle_Std: 0.5655625396465462%
+Bwd_Packet_Length_Min: 0.5569631661929442%
+Total_Fwd_Packets: 0.5292198248931339%
+Bwd_Packet_Length_Std: 0.4869889501821832%
+Avg_Fwd_Segment_Size: 0.42844521847801004%
+Bwd_IAT_Min: 0.37385617611346533%
+Fwd_Header_Length.1: 0.3383529045577905%
+Flow_Packets/s: 0.3351677642100921%
+act_data_pkt_fwd: 0.32534159361485654%
+Fwd_Packet_Length_Mean: 0.31311325478816887%
+Fwd_IAT_Std: 0.2757796094493991%
+Bwd_IAT_Std: 0.2558378812326346%
+Subflow_Fwd_Packets: 0.22682907751839987%
+Max_Packet_Length: 0.22545837436544627%
+ACK_Flag_Count: 0.20867832684976018%
+URG_Flag_Count: 0.194380410848417%
+Total_Length_of_Fwd_Packets: 0.1800131682515325%
+Packet_Length_Std: 0.17333755979848758%
+Fwd_Packet_Length_Max: 0.13623467820073376%
+Packet_Length_Variance: 0.05287416656028467%
+Active_Min: 0.04143762891558693%
+Bwd_IAT_Max: 0.027219832374365736%
+Bwd_IAT_Total: 0.017788680225957358%
+Fwd_Packet_Length_Std: 0.006581957620832427%
+Active_Max: 0.003411123547785379%
+Down/Up_Ratio: 0.0033756764373251294%
+Subflow_Bwd_Packets: 0.001775626098578481%
+Idle_Min: 0.0009872318304014298%
+Active_Mean: 0.0009206476715525849%
+Idle_Max: 2.4500572543074626e-05%
+Protocol: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Std: 0.0%
+--------------------------------------------------------
+               precision    recall  f1-score   support
+
+       BENIGN       1.00      0.99      1.00     50231
+DoS slowloris       0.99      1.00      1.00     49769
+
+    micro avg       1.00      1.00      1.00    100000
+    macro avg       1.00      1.00      1.00    100000
+ weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs SSH-Patator
+--------------------------------------------------------
+Loading binaryCompare/SSH-Patator_train.csv
+Done
+Fitting RF for BENIGN vs SSH-Patator
+Fitted. Time passed: 0.625221014023
+Loading binaryCompare/SSH-Patator_test.csv
+Done
+Accuracy for BENIGN vs SSH-Patator= 0.99593
+
+Variable Importances:
+Flow_Bytes/s: 10.28123038190389%
+Average_Packet_Size: 9.266050748716667%
+Min_Packet_Length: 8.828560989972496%
+Bwd_Packets/s: 6.868347962487734%
+Total_Backward_Packets: 6.087631658978343%
+act_data_pkt_fwd: 5.8111638891565125%
+Bwd_Packet_Length_Max: 5.571976847015294%
+Flow_Packets/s: 4.95487297571012%
+Bwd_Packet_Length_Mean: 4.104011725982443%
+Bwd_Packet_Length_Min: 3.8527294908351344%
+Init_Win_bytes_backward: 3.8104610825140433%
+Avg_Bwd_Segment_Size: 3.5792772916380464%
+Init_Win_bytes_forward: 3.470194173018432%
+Subflow_Bwd_Packets: 3.216216455410728%
+Fwd_Header_Length.1: 2.848030594112601%
+Packet_Length_Mean: 2.7019883207641993%
+Fwd_IAT_Max: 2.155871043604302%
+Down/Up_Ratio: 1.734002593584294%
+Fwd_IAT_Std: 1.5472698471923425%
+Flow_IAT_Std: 1.2187807495639507%
+Flow_IAT_Mean: 1.2073368896642165%
+Packet_Length_Variance: 0.9389366797270544%
+min_seg_size_forward: 0.7463800887628333%
+Bwd_Header_Length: 0.7178028501255459%
+Active_Min: 0.5081474330994598%
+Bwd_IAT_Mean: 0.4424739543103894%
+Fwd_IAT_Mean: 0.3738106279287153%
+Flow_IAT_Max: 0.37200511133632225%
+URG_Flag_Count: 0.3599281417413514%
+Flow_Duration: 0.3567171161461371%
+Fwd_IAT_Total: 0.2644695655033182%
+Fwd_Packet_Length_Min: 0.23895161025428074%
+Flow_IAT_Min: 0.1854375640272761%
+Bwd_IAT_Total: 0.16351767037795575%
+Max_Packet_Length: 0.15265695243945543%
+Fwd_Header_Length: 0.1341372744905148%
+Fwd_Packets/s: 0.13146046638068498%
+Fwd_IAT_Min: 0.11212271080101627%
+Subflow_Fwd_Bytes: 0.10681073118259504%
+Bwd_IAT_Std: 0.08968329643146211%
+Fwd_Packet_Length_Max: 0.06768972320612947%
+Fwd_Packet_Length_Mean: 0.06731355526104407%
+Subflow_Bwd_Bytes: 0.0505820108108079%
+Active_Mean: 0.0452235934343522%
+Packet_Length_Std: 0.045209477614831746%
+Fwd_Packet_Length_Std: 0.04139726295027539%
+Bwd_IAT_Min: 0.041133089016164984%
+SYN_Flag_Count: 0.022683496580823487%
+Total_Length_of_Bwd_Packets: 0.019427489699540185%
+Bwd_IAT_Max: 0.018983453745728896%
+Bwd_Packet_Length_Std: 0.01828731084949057%
+Total_Length_of_Fwd_Packets: 0.016069484839468746%
+Total_Fwd_Packets: 0.01320119236084347%
+Avg_Fwd_Segment_Size: 0.011932241725801653%
+Subflow_Fwd_Packets: 0.005889675174860162%
+Fwd_PSH_Flags: 0.0033860396150071424%
+Idle_Mean: 0.00013534622267001307%
+Protocol: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      0.99      1.00     50095
+ SSH-Patator       0.99      1.00      1.00     49905
+
+   micro avg       1.00      1.00      1.00    100000
+   macro avg       1.00      1.00      1.00    100000
+weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs Bot
+--------------------------------------------------------
+Loading binaryCompare/Bot_train.csv
+Done
+Fitting RF for BENIGN vs Bot
+Fitted. Time passed: 0.815258979797
+Loading binaryCompare/Bot_test.csv
+Done
+Accuracy for BENIGN vs Bot= 0.98362
+
+Variable Importances:
+Bwd_Packet_Length_Mean: 17.91675253263738%
+Avg_Bwd_Segment_Size: 15.906934463138663%
+Bwd_Packet_Length_Min: 9.25601535509531%
+Bwd_Packets/s: 7.547242626201093%
+Init_Win_bytes_backward: 7.345460521222234%
+Bwd_Packet_Length_Max: 5.488521803052297%
+Total_Length_of_Bwd_Packets: 4.026558518632708%
+Fwd_Header_Length: 3.3691663488645696%
+Packet_Length_Mean: 3.2916417728949128%
+Fwd_Packet_Length_Min: 3.0637394137628062%
+Fwd_Packets/s: 3.0182785382266366%
+Protocol: 2.9842192977976087%
+Flow_IAT_Mean: 2.22012253824016%
+Fwd_IAT_Max: 1.9603850978473871%
+Flow_Packets/s: 1.289705650694593%
+min_seg_size_forward: 1.1561476254352692%
+Fwd_IAT_Total: 1.1526901304506332%
+Fwd_IAT_Mean: 1.0232447282916803%
+Init_Win_bytes_forward: 0.9449902415992315%
+Flow_IAT_Std: 0.8153968931571078%
+Subflow_Bwd_Packets: 0.6993146894884473%
+Flow_Bytes/s: 0.5395864409313713%
+Fwd_IAT_Std: 0.494215676931674%
+Fwd_Packet_Length_Mean: 0.48746314268441626%
+Bwd_IAT_Std: 0.4716885270883186%
+Max_Packet_Length: 0.4562787831893875%
+Flow_Duration: 0.39906119720981004%
+Bwd_IAT_Total: 0.3649894745822991%
+Flow_IAT_Min: 0.3451796943453047%
+Bwd_IAT_Max: 0.2699828286051138%
+Idle_Max: 0.26370094065540056%
+Flow_IAT_Max: 0.2635331967580228%
+Subflow_Bwd_Bytes: 0.2229986431841714%
+Bwd_IAT_Min: 0.20756191978729457%
+Bwd_Header_Length: 0.1441051889768345%
+Bwd_IAT_Mean: 0.1381081955916881%
+Fwd_PSH_Flags: 0.11423543243036789%
+act_data_pkt_fwd: 0.09247683142603157%
+Total_Length_of_Fwd_Packets: 0.08411292247839063%
+Fwd_Packet_Length_Max: 0.03295343265638807%
+Fwd_Packet_Length_Std: 0.030646817860031438%
+Active_Min: 0.02255137303052444%
+URG_Flag_Count: 0.021036198912284147%
+Bwd_Packet_Length_Std: 0.016319102507640976%
+Packet_Length_Std: 0.01417953050855733%
+Average_Packet_Size: 0.005430989330960913%
+Active_Max: 0.005368898401972209%
+Packet_Length_Variance: 0.0038125766092673916%
+Fwd_IAT_Min: 0.003773070504480752%
+Fwd_Header_Length.1: 0.002492649532847734%
+Subflow_Fwd_Packets: 0.0024536143727697103%
+Idle_Mean: 0.0008349973871120969%
+Avg_Fwd_Segment_Size: 0.0007369356449867417%
+Subflow_Fwd_Bytes: 0.0006212778495474522%
+Down/Up_Ratio: 0.0005066327025035604%
+Total_Backward_Packets: 0.00047407860150315453%
+Total_Fwd_Packets: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Min_Packet_Length: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Idle_Std: 0.0%
+Idle_Min: 0.0%
+--------------------------------------------------------
+              precision    recall  f1-score   support
+
+      BENIGN       0.97      1.00      0.98     48824
+         Bot       1.00      0.97      0.98     51176
+
+   micro avg       0.98      0.98      0.98    100000
+   macro avg       0.98      0.98      0.98    100000
+weighted avg       0.98      0.98      0.98    100000
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS GoldenEye
+--------------------------------------------------------
+Loading binaryCompare/DoS GoldenEye_train.csv
+Done
+Fitting RF for BENIGN vs DoS GoldenEye
+Fitted. Time passed: 1.14949011803
+Loading binaryCompare/DoS GoldenEye_test.csv
+Done
+Accuracy for BENIGN vs DoS GoldenEye= 0.9966
+
+Variable Importances:
+Bwd_Packet_Length_Max: 10.995725701063257%
+Flow_IAT_Max: 10.293450214222513%
+Idle_Mean: 7.636097489543604%
+Flow_Duration: 6.966222829686538%
+Flow_IAT_Mean: 6.5893901072605665%
+Fwd_IAT_Total: 5.209152256286456%
+Flow_IAT_Min: 5.052460629286629%
+Avg_Bwd_Segment_Size: 4.877345509234905%
+Max_Packet_Length: 4.75101951031064%
+Flow_Packets/s: 4.435611617790126%
+Total_Backward_Packets: 4.2182240481307%
+Fwd_Header_Length.1: 3.559431616986245%
+Idle_Min: 3.0327316307806402%
+min_seg_size_forward: 2.6639567461836147%
+Average_Packet_Size: 2.582191283029677%
+Active_Max: 2.001194653874052%
+Bwd_Packet_Length_Mean: 1.4081750355944205%
+Idle_Std: 1.2856124893238534%
+Fwd_Packets/s: 1.2647617530637418%
+Bwd_Header_Length: 1.2356086201732226%
+Bwd_IAT_Mean: 1.2309219239906917%
+Bwd_Packet_Length_Std: 1.190928176687971%
+Init_Win_bytes_backward: 0.9534143684741477%
+Active_Mean: 0.8465259667115522%
+Total_Length_of_Bwd_Packets: 0.6553028578853095%
+act_data_pkt_fwd: 0.433254631750025%
+Bwd_Packets/s: 0.4235902398904833%
+Fwd_Header_Length: 0.37944425281292415%
+Bwd_IAT_Total: 0.3469380239821283%
+Protocol: 0.3389693317258474%
+Fwd_Packet_Length_Min: 0.3250087731019339%
+Fwd_IAT_Mean: 0.32364873707375846%
+Bwd_Packet_Length_Min: 0.29865940137289565%
+Bwd_IAT_Min: 0.29182583797370515%
+Init_Win_bytes_forward: 0.23738088317644446%
+Flow_Bytes/s: 0.19295607315501698%
+Subflow_Bwd_Packets: 0.18549839957718908%
+Fwd_Packet_Length_Mean: 0.15743483198742111%
+Min_Packet_Length: 0.15208529489747444%
+Fwd_IAT_Std: 0.1248557318744924%
+Packet_Length_Mean: 0.10395441117739611%
+Fwd_Packet_Length_Max: 0.08890078909326783%
+URG_Flag_Count: 0.08178289908981763%
+Fwd_IAT_Max: 0.07892393282861065%
+Fwd_IAT_Min: 0.07497786455374614%
+Subflow_Fwd_Packets: 0.0686988086493645%
+Subflow_Fwd_Bytes: 0.06331429944970168%
+Bwd_IAT_Std: 0.055875656132486004%
+Bwd_IAT_Max: 0.05087918526786927%
+Idle_Max: 0.0445818723061592%
+Fwd_Packet_Length_Std: 0.042673800390107215%
+Flow_IAT_Std: 0.03412622941306804%
+Packet_Length_Variance: 0.016171292288018738%
+Total_Fwd_Packets: 0.01307317317591411%
+Active_Std: 0.013036927613845851%
+Total_Length_of_Fwd_Packets: 0.00900013728462756%
+Packet_Length_Std: 0.007749664052891927%
+Avg_Fwd_Segment_Size: 0.0027178599736967157%
+Active_Min: 0.0025537173325945917%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+--------------------------------------------------------
+               precision    recall  f1-score   support
+
+       BENIGN       1.00      0.99      1.00     50194
+DoS GoldenEye       0.99      1.00      1.00     49806
+
+    micro avg       1.00      1.00      1.00    100000
+    macro avg       1.00      1.00      1.00    100000
+ weighted avg       1.00      1.00      1.00    100000
+
+--------------------------------------------------------

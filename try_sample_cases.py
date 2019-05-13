@@ -26,16 +26,8 @@ from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier(n_estimators = 200 ,
                             random_state = 42 , 
                             oob_score = True ,
-                            class_weight=None, 
-                            criterion='gini', 
-                            max_depth=None,
                             max_features='log2', 
-                            max_leaf_nodes=None,
-                            min_impurity_decrease=0.0, 
-                            min_impurity_split=None,
-                            min_samples_leaf=1, 
-                            min_samples_split=2,
-                            min_weight_fraction_leaf=0.0)
+                            min_samples_leaf=10 )
 
 rf.fit(features_train, labels_train)
 

@@ -1,0 +1,843 @@
+Loading mergedDataset.csv
+Done
+Loading binaryCompare/BENIGN_train.csv
+Done
+Loading binaryCompare/BENIGN_test.csv
+Done
+
+--------------------------------------------------------
+BENIGN vs DDoS
+--------------------------------------------------------
+Loading binaryCompare/DDoS_train.csv
+Done
+Fitting RF for BENIGN vs DDoS
+Fitted. Time passed: 0.157176971436
+Loading binaryCompare/DDoS_test.csv
+Done
+Accuracy for BENIGN vs DDoS= 0.97342
+
+Variable Importances:
+Fwd_IAT_Std: 53.36861230805694%
+Subflow_Fwd_Bytes: 42.81475205604951%
+Total_Length_of_Bwd_Packets: 1.397038534419292%
+Flow_IAT_Max: 0.8980238587992054%
+Active_Mean: 0.530406698627176%
+Flow_IAT_Min: 0.5027387490375018%
+Max_Packet_Length: 0.4793672286779414%
+Fwd_IAT_Total: 0.005460947465968484%
+Fwd_IAT_Mean: 0.001055874071919156%
+Init_Win_bytes_backward: 0.0009266114830015509%
+Idle_Mean: 0.000876201279539031%
+Flow_Bytes/s: 0.0003641685805355635%
+Flow_IAT_Mean: 0.00029792074625001%
+act_data_pkt_fwd: 6.352833422945109e-05%
+ACK_Flag_Count: 1.2894532949848841e-05%
+Fwd_Packets/s: 2.419838035019482e-06%
+Protocol: 0.0%
+Flow_Duration: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Backward_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Fwd_Packet_Length_Max: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_Packets/s: 0.0%
+Flow_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Bwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+Init_Win_bytes_forward: 0.0%
+min_seg_size_forward: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.66051
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS Slowhttptest
+--------------------------------------------------------
+Loading binaryCompare/DoS Slowhttptest_train.csv
+Done
+Fitting RF for BENIGN vs DoS Slowhttptest
+Fitted. Time passed: 0.14598608017
+Loading binaryCompare/DoS Slowhttptest_test.csv
+Done
+Accuracy for BENIGN vs DoS Slowhttptest= 0.96958
+
+Variable Importances:
+Fwd_IAT_Total: 56.67140712561716%
+Bwd_Packets/s: 24.04284673220908%
+Average_Packet_Size: 17.629573544855628%
+Total_Length_of_Bwd_Packets: 1.2884788800279028%
+Packet_Length_Mean: 0.27239811498324346%
+Flow_Packets/s: 0.056462217637730225%
+Flow_Bytes/s: 0.014314014410709916%
+Fwd_IAT_Std: 0.011868911274694692%
+Fwd_Packet_Length_Max: 0.00694872446947858%
+Total_Backward_Packets: 0.004267521936903244%
+Bwd_IAT_Mean: 0.0012416818599070311%
+Idle_Mean: 0.00016321424550018%
+Fwd_Packets/s: 1.8343720909263496e-05%
+Flow_IAT_Min: 8.233147086490452e-06%
+Flow_Duration: 2.0297054763195764e-06%
+Active_Min: 7.098986076538218e-07%
+Protocol: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_IAT_Mean: 0.0%
+Flow_IAT_Std: 0.0%
+Flow_IAT_Max: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Fwd_Bytes: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+Init_Win_bytes_forward: 0.0%
+Init_Win_bytes_backward: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.55695
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS Hulk
+--------------------------------------------------------
+Loading binaryCompare/DoS Hulk_train.csv
+Done
+Fitting RF for BENIGN vs DoS Hulk
+Fitted. Time passed: 0.157753944397
+Loading binaryCompare/DoS Hulk_test.csv
+Done
+Accuracy for BENIGN vs DoS Hulk= 0.96213
+
+Variable Importances:
+Avg_Bwd_Segment_Size: 57.49992883686153%
+Max_Packet_Length: 26.25374354015776%
+Bwd_Header_Length: 10.799873653549112%
+Bwd_Packets/s: 3.650832390551554%
+Total_Backward_Packets: 0.638466354366137%
+Flow_Packets/s: 0.5386871780213279%
+Flow_IAT_Std: 0.5215274991984815%
+Init_Win_bytes_forward: 0.08623063139175899%
+Fwd_IAT_Std: 0.004514767885589708%
+Min_Packet_Length: 0.0036479318722221713%
+Flow_IAT_Max: 0.002415408364970561%
+Subflow_Fwd_Bytes: 7.778835153863531e-05%
+Flow_Bytes/s: 2.9868096610146647e-05%
+Packet_Length_Std: 2.4151331430270337e-05%
+Protocol: 0.0%
+Flow_Duration: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Max: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_IAT_Mean: 0.0%
+Flow_IAT_Min: 0.0%
+Fwd_IAT_Total: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Fwd_Packets/s: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+Init_Win_bytes_backward: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.62044
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs FTP-Patator
+--------------------------------------------------------
+Loading binaryCompare/FTP-Patator_train.csv
+Done
+Fitting RF for BENIGN vs FTP-Patator
+Fitted. Time passed: 0.128940820694
+Loading binaryCompare/FTP-Patator_test.csv
+Done
+Accuracy for BENIGN vs FTP-Patator= 0.99673
+
+Variable Importances:
+Subflow_Bwd_Bytes: 32.317185880937174%
+Fwd_Packet_Length_Std: 25.06377828783573%
+Total_Backward_Packets: 22.012180988457008%
+Subflow_Fwd_Bytes: 13.331440907206323%
+Fwd_Packet_Length_Max: 7.241199613564682%
+Init_Win_bytes_forward: 0.0250682312418536%
+Avg_Fwd_Segment_Size: 0.008851113722705327%
+Flow_Duration: 0.00026483918016593594%
+Subflow_Bwd_Packets: 2.126836045499363e-05%
+Flow_Bytes/s: 6.446542073177481e-06%
+Fwd_IAT_Total: 2.4229518260117427e-06%
+Protocol: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_Packets/s: 0.0%
+Flow_IAT_Mean: 0.0%
+Flow_IAT_Std: 0.0%
+Flow_IAT_Max: 0.0%
+Flow_IAT_Min: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Fwd_Packets/s: 0.0%
+Bwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Init_Win_bytes_backward: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.71226
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs PortScan
+--------------------------------------------------------
+Loading binaryCompare/PortScan_train.csv
+Done
+Fitting RF for BENIGN vs PortScan
+Fitted. Time passed: 0.123833179474
+Loading binaryCompare/PortScan_test.csv
+Done
+Accuracy for BENIGN vs PortScan= 0.99446
+
+Variable Importances:
+Subflow_Bwd_Bytes: 54.36647422045288%
+Subflow_Fwd_Packets: 26.913311358715603%
+ACK_Flag_Count: 18.502141968039727%
+Init_Win_bytes_backward: 0.18590721551332137%
+Max_Packet_Length: 0.02159087320553057%
+Bwd_Packets/s: 0.005312442767163003%
+Subflow_Fwd_Bytes: 0.003842556711883662%
+min_seg_size_forward: 0.0006974410504731147%
+Bwd_Packet_Length_Min: 0.0005159315529396786%
+Flow_Duration: 8.037158536039047e-05%
+Fwd_Packets/s: 5.098453711270594e-05%
+Average_Packet_Size: 3.4732192683828344e-05%
+Flow_Bytes/s: 3.090133491371049e-05%
+Flow_IAT_Min: 5.7379175922408e-06%
+Fwd_Packet_Length_Max: 2.0768620372633546e-06%
+Flow_IAT_Max: 7.57980333272424e-07%
+Bwd_Packet_Length_Max: 4.295804479626579e-07%
+Protocol: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Backward_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_Packets/s: 0.0%
+Flow_IAT_Mean: 0.0%
+Flow_IAT_Std: 0.0%
+Fwd_IAT_Total: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Min_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Init_Win_bytes_forward: 0.0%
+act_data_pkt_fwd: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.64296
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS slowloris
+--------------------------------------------------------
+Loading binaryCompare/DoS slowloris_train.csv
+Done
+Fitting RF for BENIGN vs DoS slowloris
+Fitted. Time passed: 0.131694078445
+Loading binaryCompare/DoS slowloris_test.csv
+Done
+Accuracy for BENIGN vs DoS slowloris= 0.98648
+
+Variable Importances:
+Bwd_Packet_Length_Mean: 57.58482169987562%
+Flow_Packets/s: 21.364620232599744%
+Packet_Length_Std: 7.175930546226045%
+Init_Win_bytes_backward: 5.557901536967814%
+Fwd_Packet_Length_Max: 3.544358283392337%
+Down/Up_Ratio: 2.812655838298122%
+min_seg_size_forward: 1.5249822090377352%
+Bwd_IAT_Mean: 0.3835375128344449%
+PSH_Flag_Count: 0.04628309229651274%
+Fwd_Packet_Length_Mean: 0.0023477036050862103%
+Fwd_Packets/s: 0.0016657721220202147%
+Flow_Duration: 0.000857625303118664%
+Bwd_IAT_Total: 3.7947441394890007e-05%
+Protocol: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Backward_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_Bytes/s: 0.0%
+Flow_IAT_Mean: 0.0%
+Flow_IAT_Std: 0.0%
+Flow_IAT_Max: 0.0%
+Flow_IAT_Min: 0.0%
+Fwd_IAT_Total: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Bwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Fwd_Bytes: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+Init_Win_bytes_forward: 0.0%
+act_data_pkt_fwd: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.62584
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs SSH-Patator
+--------------------------------------------------------
+Loading binaryCompare/SSH-Patator_train.csv
+Done
+Fitting RF for BENIGN vs SSH-Patator
+Fitted. Time passed: 0.134238004684
+Loading binaryCompare/SSH-Patator_test.csv
+Done
+Accuracy for BENIGN vs SSH-Patator= 0.97911
+
+Variable Importances:
+Init_Win_bytes_backward: 88.87252450029402%
+Bwd_IAT_Max: 10.118301947680871%
+Flow_IAT_Mean: 0.473907801597518%
+Bwd_IAT_Total: 0.21019269696357165%
+Fwd_Packets/s: 0.19945207063605314%
+Fwd_IAT_Min: 0.10272857770550893%
+SYN_Flag_Count: 0.017750671215421638%
+Flow_Packets/s: 0.0018877156150331558%
+Subflow_Bwd_Bytes: 0.0014523308797381581%
+Avg_Fwd_Segment_Size: 0.0012851436104558008%
+Total_Length_of_Bwd_Packets: 0.0002855847714855325%
+Fwd_IAT_Total: 0.00023095903033578888%
+Protocol: 0.0%
+Flow_Duration: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Backward_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Fwd_Packet_Length_Max: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Bwd_Packet_Length_Std: 0.0%
+Flow_Bytes/s: 0.0%
+Flow_IAT_Std: 0.0%
+Flow_IAT_Max: 0.0%
+Flow_IAT_Min: 0.0%
+Fwd_IAT_Mean: 0.0%
+Fwd_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Bwd_IAT_Mean: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Bwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Fwd_Bytes: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Init_Win_bytes_forward: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.84322
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs Bot
+--------------------------------------------------------
+Loading binaryCompare/Bot_train.csv
+Done
+Fitting RF for BENIGN vs Bot
+Fitted. Time passed: 0.138091802597
+Loading binaryCompare/Bot_test.csv
+Done
+Accuracy for BENIGN vs Bot= 0.97266
+
+Variable Importances:
+URG_Flag_Count: 33.483585034744365%
+Subflow_Bwd_Bytes: 28.633211412259268%
+Total_Backward_Packets: 17.109553292468004%
+Bwd_Packet_Length_Min: 6.661086669771072%
+Init_Win_bytes_backward: 5.892622748930954%
+Bwd_Packet_Length_Mean: 4.053751851277086%
+Flow_Duration: 2.3088142742214486%
+Packet_Length_Mean: 0.818977795392003%
+Init_Win_bytes_forward: 0.4053427761804817%
+Total_Length_of_Fwd_Packets: 0.31121094499992075%
+Flow_IAT_Max: 0.18906985508442994%
+Flow_IAT_Mean: 0.11680318178255991%
+Bwd_IAT_Std: 0.0071611887567262274%
+Flow_Packets/s: 0.004934904612802056%
+Fwd_IAT_Mean: 0.0022453146981089504%
+Bwd_Packets/s: 0.0008973214035692609%
+Bwd_Packet_Length_Std: 0.0006594104643623045%
+Bwd_IAT_Min: 5.547546969407928e-05%
+Bwd_IAT_Max: 1.2356368158094886e-05%
+Bwd_IAT_Mean: 2.468300996722352e-06%
+Fwd_IAT_Total: 1.7228139931951376e-06%
+Protocol: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Max: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Flow_Bytes/s: 0.0%
+Flow_IAT_Std: 0.0%
+Flow_IAT_Min: 0.0%
+Fwd_IAT_Std: 0.0%
+Fwd_IAT_Max: 0.0%
+Fwd_IAT_Min: 0.0%
+Bwd_IAT_Total: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Fwd_Header_Length: 0.0%
+Bwd_Header_Length: 0.0%
+Fwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Std: 0.0%
+Packet_Length_Variance: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Fwd_Segment_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Fwd_Bytes: 0.0%
+Subflow_Bwd_Packets: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Std: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Std: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.67625
+--------------------------------------------------------
+
+--------------------------------------------------------
+BENIGN vs DoS GoldenEye
+--------------------------------------------------------
+Loading binaryCompare/DoS GoldenEye_train.csv
+Done
+Fitting RF for BENIGN vs DoS GoldenEye
+Fitted. Time passed: 0.156131029129
+Loading binaryCompare/DoS GoldenEye_test.csv
+Done
+Accuracy for BENIGN vs DoS GoldenEye= 0.97524
+
+Variable Importances:
+Flow_IAT_Max: 68.55219504734079%
+Active_Std: 13.517652622516321%
+Fwd_IAT_Min: 10.191469954526525%
+Bwd_IAT_Mean: 3.6825283393509913%
+Bwd_Packet_Length_Std: 1.8990168658363191%
+Flow_IAT_Min: 1.3853884158831966%
+Avg_Fwd_Segment_Size: 0.5254403648599271%
+Idle_Std: 0.1271834230099431%
+Subflow_Fwd_Bytes: 0.03642290713709451%
+Fwd_IAT_Std: 0.03304594492867286%
+Flow_IAT_Mean: 0.02503089862977945%
+Fwd_Header_Length: 0.02269638883078844%
+Packet_Length_Variance: 0.0012973739898191911%
+Init_Win_bytes_forward: 0.0002930712766241085%
+Fwd_IAT_Mean: 0.00019551526577253297%
+Flow_Packets/s: 0.00014286661742758238%
+Protocol: 0.0%
+Flow_Duration: 0.0%
+Total_Fwd_Packets: 0.0%
+Total_Backward_Packets: 0.0%
+Total_Length_of_Fwd_Packets: 0.0%
+Total_Length_of_Bwd_Packets: 0.0%
+Fwd_Packet_Length_Max: 0.0%
+Fwd_Packet_Length_Min: 0.0%
+Fwd_Packet_Length_Mean: 0.0%
+Fwd_Packet_Length_Std: 0.0%
+Bwd_Packet_Length_Max: 0.0%
+Bwd_Packet_Length_Min: 0.0%
+Bwd_Packet_Length_Mean: 0.0%
+Flow_Bytes/s: 0.0%
+Flow_IAT_Std: 0.0%
+Fwd_IAT_Total: 0.0%
+Fwd_IAT_Max: 0.0%
+Bwd_IAT_Total: 0.0%
+Bwd_IAT_Std: 0.0%
+Bwd_IAT_Max: 0.0%
+Bwd_IAT_Min: 0.0%
+Fwd_PSH_Flags: 0.0%
+Bwd_PSH_Flags: 0.0%
+Fwd_URG_Flags: 0.0%
+Bwd_URG_Flags: 0.0%
+Bwd_Header_Length: 0.0%
+Fwd_Packets/s: 0.0%
+Bwd_Packets/s: 0.0%
+Min_Packet_Length: 0.0%
+Max_Packet_Length: 0.0%
+Packet_Length_Mean: 0.0%
+Packet_Length_Std: 0.0%
+FIN_Flag_Count: 0.0%
+SYN_Flag_Count: 0.0%
+RST_Flag_Count: 0.0%
+PSH_Flag_Count: 0.0%
+ACK_Flag_Count: 0.0%
+URG_Flag_Count: 0.0%
+CWE_Flag_Count: 0.0%
+ECE_Flag_Count: 0.0%
+Down/Up_Ratio: 0.0%
+Average_Packet_Size: 0.0%
+Avg_Bwd_Segment_Size: 0.0%
+Fwd_Header_Length.1: 0.0%
+Fwd_Avg_Bytes/Bulk: 0.0%
+Fwd_Avg_Packets/Bulk: 0.0%
+Fwd_Avg_Bulk_Rate: 0.0%
+Bwd_Avg_Bytes/Bulk: 0.0%
+Bwd_Avg_Packets/Bulk: 0.0%
+Bwd_Avg_Bulk_Rate: 0.0%
+Subflow_Fwd_Packets: 0.0%
+Subflow_Bwd_Packets: 0.0%
+Subflow_Bwd_Bytes: 0.0%
+Init_Win_bytes_backward: 0.0%
+act_data_pkt_fwd: 0.0%
+min_seg_size_forward: 0.0%
+Active_Mean: 0.0%
+Active_Max: 0.0%
+Active_Min: 0.0%
+Idle_Mean: 0.0%
+Idle_Max: 0.0%
+Idle_Min: 0.0%
+NB Accuracy :0.79127
+--------------------------------------------------------

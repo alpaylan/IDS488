@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from matplotlib import pyplot as plt
 from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import export_graphviz
+from subprocess import call
 
 datasetName = "mergedDataset.csv"
 testSample = "testSample.csv"
@@ -90,6 +92,7 @@ def compareBinary():
         benignTest = ut.loadCSV("binaryCompare/BENIGN_test.csv", lm=True)
         benignReal = benignTest["Label"]
         benignTest = benignTest.drop("Label", axis = 1)
+        trees = []
         for i in labelNames:
                 if i == "BENIGN":
                         continue
@@ -108,6 +111,7 @@ def compareBinary():
                 forest.fit(mergedTrainFeatures, mergedTrainLabels)
                 fitEnd = time.time()
                 print "Fitted. Time passed: " + str(fitEnd - fitStart)
+                trees.append((i,forest))
                 attackTest = ut.loadCSV("binaryCompare/" + i + "_test.csv", lm=True)
                 attackReal = attackTest["Label"]
                 attackTest = attackTest.drop("Label", axis = 1)
@@ -126,6 +130,7 @@ def compareBinary():
                 for i in importantPairs:
                         print i[0] + ": " + str(100*i[1]) + "%"
                 print "--------------------------------------------------------"
+        return trees
 
 #compareBinary()
 
@@ -214,6 +219,13 @@ def nbVSrf():
                 accuracyNb.append(accNb)
                 accuracyRf.append(accRf)
                 print "--------------------------------------------------------"
-        plotChart(accuracyRf, accuracyNb, labelNames[1::])
+        #plotChart(accuracyRf, accuracyNb, labelNames[1::])
 
-nbVSrf()
+def visualizeTrees():
+        trees = compareBinary()
+        for i in trees:
+                export_graphviz(i[1][0], out_file= "trees/" + i[0] + '.dot', feature_names = list(features),class_names = ["BENIGN", i[0]],
+                                        rounded = True, proportion = False, precision = 2, filled = True)
+                call(['dot', '-Tpng', "trees/" + i[0] + '.dot', '-o', "trees/" + i[0] + '.png', '-Gdpi=600'])
+
+visualizeTrees()

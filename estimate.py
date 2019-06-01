@@ -2,6 +2,7 @@ import pandas as pd
 import time
 import utilities as ut
 import numpy as np
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from matplotlib import pyplot as plt
@@ -164,6 +165,30 @@ def plotChart(l1, l2, labelList):
         fig.tight_layout()
         plt.show()
 
+def plotImportance(l1, labelList, attack):
+        n_groups = len(l1)
+        fig, ax = plt.subplots(figsize = (18,10))
+
+        index = np.arange(n_groups)
+        bar_width = 0.2
+
+        opacity = 0.4
+
+        ax.bar(index+bar_width/2, l1, bar_width,
+                        alpha=opacity, color='g',
+                        label=attack)
+
+        ax.set_xlabel('Group')
+        ax.set_ylabel('Importance')
+        ax.set_title(attack)
+        ax.set_xticks(index + bar_width / 2)
+        ax.set_xticklabels(labelList)
+        ax.legend()
+
+        fig.tight_layout()
+        print attack
+        plt.savefig("graf/" + attack + ".png")
+
 def nbVSrf():
         global labels
         labelNames = ut.labelTypes(labels)
@@ -218,14 +243,73 @@ def nbVSrf():
                 print "NB Accuracy :" + str(accNb)
                 accuracyNb.append(accNb)
                 accuracyRf.append(accRf)
+                quad = QuadraticDiscriminantAnalysis()
+                quad.fit(mergedTrainFeatures, mergedTrainLabels)
+                quadPredict = quad.predict(mergedTestFeatures)
+                quadAcc = accuracy_score(quadPredict, mergedReal)
+                print "Quadratic Accuracy :" + str(quadAcc)
                 print "--------------------------------------------------------"
         #plotChart(accuracyRf, accuracyNb, labelNames[1::])
 
 def visualizeTrees():
         trees = compareBinary()
         for i in trees:
-                export_graphviz(i[1][0], out_file= "trees/" + i[0] + '.dot', feature_names = list(features),class_names = ["BENIGN", i[0]],
+                export_graphviz(i[1][0], out_file= "trees/" + i[0] + '.dot', feature_names = list(features),class_names = [i[0], "BENIGN"],
                                         rounded = True, proportion = False, precision = 2, filled = True)
                 call(['dot', '-Tpng', "trees/" + i[0] + '.dot', '-o', "trees/" + i[0] + '.png', '-Gdpi=600'])
 
-visualizeTrees()
+def plotImportances():
+        global labels
+        labelNames = ut.labelTypes(labels)
+        benignTrain = ut.loadCSV("binaryCompare/BENIGN_train.csv", lm=True)
+        benignTrainLabels = benignTrain["Label"]
+        benignTrain = benignTrain.drop("Label", axis = 1)
+        benignTest = ut.loadCSV("binaryCompare/BENIGN_test.csv", lm=True)
+        benignReal = benignTest["Label"]
+        benignTest = benignTest.drop("Label", axis = 1)
+        trees = []
+        for i in labelNames:
+                if i == "BENIGN":
+                        continue
+                print ""
+                print "--------------------------------------------------------"
+                print "BENIGN vs " + i
+                print "--------------------------------------------------------"
+                attackTrain = ut.loadCSV("binaryCompare/" + i + "_train.csv", lm=True)
+                attackLabels = attackTrain["Label"]
+                attackTrain = attackTrain.drop("Label", axis = 1)
+                forest = RandomForestClassifier(n_estimators=1, min_samples_leaf=1000)
+                mergedTrainFeatures = benignTrain.append(attackTrain)
+                mergedTrainLabels = benignTrainLabels.append(attackLabels)
+                print "Fitting RF for BENIGN vs " + i
+                fitStart = time.time()
+                forest.fit(mergedTrainFeatures, mergedTrainLabels)
+                fitEnd = time.time()
+                print "Fitted. Time passed: " + str(fitEnd - fitStart)
+                trees.append((i,forest))
+                attackTest = ut.loadCSV("binaryCompare/" + i + "_test.csv", lm=True)
+                attackReal = attackTest["Label"]
+                attackTest = attackTest.drop("Label", axis = 1)
+                mergedTestFeatures = benignTest.append(attackTest)
+                mergedReal = benignReal.append(attackReal)
+                predictions = forest.predict(mergedTestFeatures)
+                print "Accuracy for BENIGN vs " + i + "= " + str(accuracy_score(predictions,mergedReal))
+                print ""
+                print "Variable Importances:"
+                importances = forest.feature_importances_
+                featureNames = list(attackTest)
+                importantPairs = []
+                for j in range(0, len(featureNames)):
+                        importantPairs.append((featureNames[j], importances[j]))
+                importantPairs.sort(key = lambda i : i[1], reverse = True)
+                plottedList = []
+                plottedLabel = []
+                for j in importantPairs:
+                        print j[0] + ": " + str(100*j[1]) + "%"
+                        plottedLabel.append(j[0])
+                        plottedList.append(j[1])
+                plotImportance(plottedList[0:5], plottedLabel[0:5], i)
+                print "--------------------------------------------------------"
+        return trees
+
+plotImportances()
